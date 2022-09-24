@@ -4,7 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
+    android:backgroundTint="#000000"
     tools:context="com.example.week2_0706012110051.MainActivity">
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:text="RESET"
+        app:layout_constraintStart_toEndOf="@+id/kambing_button"
+        app:layout_constraintTop_toBottomOf="@+id/home_toolbarDetail" />
+
+    <Button
+        android:id="@+id/kambing_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:text="KAMBING"
+        app:layout_constraintStart_toEndOf="@+id/sapi_button"
+        app:layout_constraintTop_toBottomOf="@+id/home_toolbarDetail" />
+
+    <Button
+        android:id="@+id/sapi_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:text="SAPI"
+        app:layout_constraintStart_toEndOf="@+id/ayam_button"
+        app:layout_constraintTop_toBottomOf="@+id/home_toolbarDetail" />
+
+    <Button
+        android:id="@+id/ayam_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:text="Ayam"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_toolbarDetail" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listDataHewan_recyclerView"
@@ -15,7 +57,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_toolbarDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/ayam_button" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/home_toolbarDetail"
