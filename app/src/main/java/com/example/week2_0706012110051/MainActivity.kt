@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity(), CardListener {
 
         supportActionBar?.hide()
         setupRecyclerView()
+        notification()
         listener()
 
     }
@@ -40,8 +41,7 @@ class MainActivity : AppCompatActivity(), CardListener {
         if(GlobalVar.listDataHewan.isNotEmpty()){
             viewBind.middleTextView.visibility = View.GONE
         }
-        else if(GlobalVar.listDataHewan.isEmpty())
-        {
+        else if(GlobalVar.listDataHewan.isEmpty()) {
             viewBind.middleTextView.visibility = View.VISIBLE
         }
     }
@@ -81,17 +81,7 @@ class MainActivity : AppCompatActivity(), CardListener {
             viewBind.listDataHewanRecyclerView.adapter = ListHewanRVAdapter(GlobalVar.listDataHewan, this)
         }
         adapter.notifyDataSetChanged()
-        if(GlobalVar.listDataHewan.isNotEmpty()){
-            viewBind.middleTextView.visibility = View.GONE
-        }
-        else
-        {
-            viewBind.middleTextView.visibility = View.VISIBLE
-
-        }
     }
-
-
 
     //untuk mengatur tampilan di Activity Recycler View. search google??
     private fun setupRecyclerView(){

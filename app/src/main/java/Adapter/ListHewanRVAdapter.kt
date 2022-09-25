@@ -55,69 +55,30 @@ class ListHewanRVAdapter(val listHewan: ArrayList<Hewan>, val CardListener: Card
 
         holder.viewBind.playSoundButton.setOnClickListener {
             if(GlobalVar.filterListDataHewan.isEmpty()){
-                if(GlobalVar.listDataHewan.get(position) is Ayam || GlobalVar.filterListDataHewan.get(position) is Ayam){
                     Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).speak(), Toast.LENGTH_SHORT).show()
-                }else if(GlobalVar.listDataHewan.get(position) is Sapi || GlobalVar.filterListDataHewan.get(position) is Sapi){
-                    Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).speak(), Toast.LENGTH_SHORT).show()
-                }else if(GlobalVar.listDataHewan.get(position) is Kambing || GlobalVar.filterListDataHewan.get(position) is Kambing){
-                    Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).speak(), Toast.LENGTH_SHORT).show()
-                }
-            }
-            else{
-                if(GlobalVar.filterListDataHewan.get(position) is Ayam){
-                    Toast.makeText(it.context, GlobalVar.filterListDataHewan.get(position).speak(), Toast.LENGTH_SHORT).show()
-                }else if(GlobalVar.filterListDataHewan.get(position) is Sapi){
-                    Toast.makeText(it.context, GlobalVar.filterListDataHewan.get(position).speak(), Toast.LENGTH_SHORT).show()
-                }else if(GlobalVar.filterListDataHewan.get(position) is Kambing){
-                    Toast.makeText(it.context, GlobalVar.filterListDataHewan.get(position).speak(), Toast.LENGTH_SHORT).show()
-                }
+            } else{
+                Toast.makeText(it.context, GlobalVar.filterListDataHewan.get(position).speak(), Toast.LENGTH_SHORT).show()
             }
         }
         holder.viewBind.foodButton.setOnClickListener {
             if(GlobalVar.filterListDataHewan.isEmpty()){
-                    if(GlobalVar.listDataHewan.get(position) is Ayam || GlobalVar.filterListDataHewan.get(position) is Ayam){
                     if(GlobalVar.listDataHewan.get(position).jenis == "AYAM"){
                         Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).eat(biji = Biji()), Toast.LENGTH_SHORT).show()
                     } else{
                         Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).eat(rumput = Rumput()), Toast.LENGTH_SHORT).show()
                     }
-                    }else if(GlobalVar.listDataHewan.get(position) is Sapi || GlobalVar.filterListDataHewan.get(position) is Sapi){
-                    if(GlobalVar.listDataHewan.get(position).jenis == "AYAM"){
-                        Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).eat(biji = Biji()), Toast.LENGTH_SHORT).show()
-                    } else{
-                        Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).eat(rumput = Rumput()), Toast.LENGTH_SHORT).show()
-                    }
-                    }else if(GlobalVar.listDataHewan.get(position) is Kambing || GlobalVar.filterListDataHewan.get(position) is Kambing){
-                    if(GlobalVar.listDataHewan.get(position).jenis == "AYAM"){
-                        Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).eat(biji = Biji()), Toast.LENGTH_SHORT).show()
-                    } else{
-                        Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).eat(rumput = Rumput()), Toast.LENGTH_SHORT).show()
-                    }                }
             }else{
-                    if(GlobalVar.filterListDataHewan.get(position) is Ayam){
-                    if(GlobalVar.listDataHewan.get(position).jenis == "AYAM"){
+                    if(GlobalVar.filterListDataHewan.get(position).jenis == "AYAM"){
                         Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).eat(biji = Biji()), Toast.LENGTH_SHORT).show()
                     } else{
                         Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).eat(rumput = Rumput()), Toast.LENGTH_SHORT).show()
-                    }
-                    }else if(GlobalVar.filterListDataHewan.get(position) is Sapi){
-                    if(GlobalVar.listDataHewan.get(position).jenis == "AYAM"){
-                        Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).eat(biji = Biji()), Toast.LENGTH_SHORT).show()
-                    } else{
-                        Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).eat(rumput = Rumput()), Toast.LENGTH_SHORT).show()
-                    }
-                    }else if(GlobalVar.filterListDataHewan.get(position) is Kambing){
-                        if(GlobalVar.listDataHewan.get(position).jenis == "AYAM"){
-                        Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).eat(biji = Biji()), Toast.LENGTH_SHORT).show()
-                    } else{
-                        Toast.makeText(it.context, GlobalVar.listDataHewan.get(position).eat(rumput = Rumput()), Toast.LENGTH_SHORT).show()
-                        }
                     }
             }
+            }
         }
-    }
 
     override fun getItemCount(): Int {
         return listHewan.size
     }
 }
+

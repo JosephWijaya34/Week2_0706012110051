@@ -54,7 +54,12 @@ class TambahHewanActivity : AppCompatActivity() {
         if (position != -1) {
             viewBind.homeToolbarDetail.setTitle("EDIT HEWAN")
             viewBind.simpanButton.setText("SIMPAN")
-            val tempHew=GlobalVar.listDataHewan[position]
+            val tempHew=
+            if(GlobalVar.filterListDataHewan.isEmpty()){
+                GlobalVar.listDataHewan[position]
+            } else {
+                GlobalVar.filterListDataHewan[position]
+            }
             Display(tempHew)
         }
     }
